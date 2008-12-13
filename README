@@ -57,5 +57,5 @@ Notes: Steps 2 - 4 are optional. If you don't want to download ip-to-country dat
        the system will work but the visitor country will not be tracked.
 
 == Upcoming Features ==
-Access control t secure rail_stat for admin only viewing.
+Access control to secure rail_stat for admin only viewing.
 
