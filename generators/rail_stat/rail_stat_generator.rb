@@ -34,7 +34,7 @@ class RailStatGenerator < Rails::Generator::Base
       m.template "db/ip-to-country.mysql.sql", "db/ip-to-country.mysql.sql"
       m.migration_template "db/railstat.rb", "db/migrate", :migration_file_name => 'railstat'
      
-      m.template "../../README", "README_RAILSTAT"
+      m.template "README", "README_RAILSTAT"
     end
   end
 end
