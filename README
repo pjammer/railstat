@@ -42,7 +42,7 @@ Step Three: Database Migration
    unzip ip-to-country.csv.zip
 For MAC OS/X Users: instead of getting wget onto your system, just download the file using Safari.
 
-3. Copy ip-to-country.csv and ip-to-country.mysql.sql into db/ directory
+3. Copy ip-to-country.csv into db/ directory
 
 4. Upload the data using ip-to-country.mysql.sql:
 
