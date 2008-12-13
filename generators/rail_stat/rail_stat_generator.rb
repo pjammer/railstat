@@ -15,13 +15,7 @@ class RailStatGenerator < Rails::Generator::Base
 
       m.directory "app/views/rail_stat"
       m.template "app/views/rail_stat/_menu.rhtml", "app/views/rail_stat/_menu.rhtml"
-      m.template "app/views/rail_stat/hits.rhtml", "app/views/rail_stat/hits.rhtml"
-      m.template "app/views/rail_stat/lang.rhtml", "app/views/rail_stat/lang.rhtml"
-      m.template "app/views/rail_stat/other.rhtml", "app/views/rail_stat/other.rhtml"
-      m.template "app/views/rail_stat/path.rhtml", "app/views/rail_stat/path.rhtml"
-      m.template "app/views/rail_stat/platform.rhtml", "app/views/rail_stat/platform.rhtml"
-      m.template "app/views/rail_stat/refs.rhtml", "app/views/rail_stat/refs.rhtml"
-
+      
       m.template "public/stylesheets/railstat.css", "public/stylesheets/railstat.css" 
       m.template "public/stylesheets/tabs.css", "public/stylesheets/tabs.css" 
       m.template "public/javascripts/railstat.js", "public/javascripts/railstat.js"
