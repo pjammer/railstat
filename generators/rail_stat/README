@@ -1,0 +1,61 @@
+Rail_Stat - Website stat tracking from within your rails app!
+
+Updated to work with Rails 2.2.2, this plugin allows you to view stats about your website from within your app.
+Instead of just relying on Google Analytics or StatCounter, track your own stats.
+
+Features include:
+Hits - Today and last 7 days
+OS platform and Browser
+Languages
+Country identifiers
+Referrers
+Supported Environments, like Flash, Java etc.
+Screen Resolution.
+
+== Installation Instructions ==
+
+It is assumed that you have already generated your rails app.
+These steps apply for either a new or existing app.
+
+Step One: Install the Plugin
+-----------------------------
+1. Install the rail_stat plugin from github using the following command:
+
+script/plugin install git://github.com/nerbie69/railstat.git
+
+Step Two: Generate rail_stat
+----------------------------
+1. After installing the plugin, run the following command:
+
+script/generate rail_stat
+
+2. Notice that your app has now been populated with the generated rail_stat code, such as views/rail_stat, model/rail_stat.rb etc...
+
+Step Three: Database Migration
+------------------------------
+
+1. Create the database schema using rake db:migrate
+
+2. Download the IP-to-Country database from http://ip-to-country.webhosting.info/ :
+
+   wget http://ip-to-country.webhosting.info/downloads/ip-to-country.csv.zip
+   unzip ip-to-country.csv.zip
+For MAC OS/X Users: instead of getting wget onto your system, just download the file using Safari.
+
+3. Copy ip-to-country.csv into db/ directory
+
+4. Upload the data using ip-to-country.mysql.sql:
+
+   mysql -u _user_ _dbname_ < ip-to-country.mysql.sql
+
+5. Add your web site name to the end of config/environment.rb (assign it to a constant SITE_NAME)
+   
+   Example:
+   SITE_NAME = 'www.mydomain.com'
+
+Notes: Steps 2 - 4 are optional. If you don't want to download ip-to-country database 
+       the system will work but the visitor country will not be tracked.
+
+== Upcoming Features ==
+Access control to secure rail_stat for admin only viewing.
+
