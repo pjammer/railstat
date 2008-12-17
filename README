@@ -29,7 +29,7 @@ Step Two: Generate rail_stat
 
 script/generate rail_stat
 
-2. Notice that your app has now been populated with the generated rail_stat code, such as views/rail_stat, model/rail_stat.rb etc...
+2. Notice that your app has now been populated with the generated rail_stat code, such as views/rail_stat, models/rail_stat.rb etc...
 
 Step Three: Database Migration
 ------------------------------
@@ -58,4 +58,22 @@ Notes: Steps 2 - 4 are optional. If you don't want to download ip-to-country dat
 
 == Upcoming Features ==
 Access control to secure rail_stat for admin only viewing.
+
+== Changes ==
+v 0.1 - removed much of the generator code to function as follows:
+vendor/plugins/rail_stat/
+|-- lib
+|   |-- app
+|   |   |-- controllers
+|   |   |-- helpers
+|   |   |-- models
+|   |   | -- views
+|   |-- rail_stat
+|   |   |-- acts_as_yaffle.rb
+|   |   |-- commands.rb
+|   |   `-- core_ext.rb
+|   `-- rail_stat.rb
+|   `-- path_tracker.rb
+
+Thanks to the rails guides for the knowledge to do so.
 

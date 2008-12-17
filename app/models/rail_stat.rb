@@ -36,7 +36,7 @@ class RailStat < ActiveRecord::Base
     @marked = true
   end
   
-  def RailStat.get_ordered40resources(subdomain)
+  def self.get_ordered40resources(subdomain)
       ordered_resources = []
       if subdomain.nil?
         find_by_sql("SELECT resource, COUNT(resource) AS requests,  max(created_at) AS created_at " +

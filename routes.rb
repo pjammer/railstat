@@ -1,0 +1,7 @@
+connect "/rail_stat", :controller => "rail_stat", :action => "index"
+connect "/rail_stat/path", :controller => "rail_stat", :action => "path"
+connect "/rail_stat/hits", :controller => "rail_stat", :action => "hits"
+connect "/rail_stat/lang", :controller => "rail_stat", :action => "lang"
+connect "/rail_stat/other", :controller => "rail_stat", :action => "other"
+connect "/rail_stat/platform", :controller => "rail_stat", :action => "platform"
+connect "/rail_stat/refs", :controller => "rail_stat", :action => "refs"
