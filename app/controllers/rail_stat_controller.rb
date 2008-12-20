@@ -1,12 +1,15 @@
-require_dependency 'path_tracker'
-
 class RailStatController < ApplicationController
+  unloadable
   include PathTracker
 
   before_filter :extract_subdomain
-
+  
+  # Uncomment this line if you want to protect rail_stat and you are using RESTful Authentication.
+  #before_filter :login_required
+  # Also, add your admin authenticated method here if you need it.
+  #before_filter :admin_user 
   def index
-    redirect_to(:action=>'path')
+    redirect_to(:action=>'hits')
   end
 
   def path
