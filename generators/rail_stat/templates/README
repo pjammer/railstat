@@ -1,7 +1,7 @@
 Rail_Stat - Website stat tracking from within your rails app!
 
 Updated to work with Rails 2.2.2, this plugin allows you to view stats about your website from within your app.
-Instead of just relying on Google Analytics or StatCounter, track your own stats.
+Instead of just relying on Google Analytics or StatCounter, track your own app stats.
 
 Features include:
 Hits - Today and last 7 days
@@ -14,13 +14,14 @@ Screen Resolution.
 
 == Installation Instructions ==
 
-It is assumed that you have already generated your rails app.
+It is assumed that you have already generated your rails app and have setup github as a repository for your plugin (use their wiki if you haven't, but you should).
 These steps apply for either a new or existing app.
 
-Step One: Install the Plugin
+Step One: Install the Plugins
 -----------------------------
-1. Install the rail_stat plugin from github using the following command:
+1. There are two plugins to install from github:
 
+script/plugin install git://github.com/lazyatom/engines.git
 script/plugin install git://github.com/nerbie69/railstat.git
 
 Step Two: Generate rail_stat
@@ -29,7 +30,14 @@ Step Two: Generate rail_stat
 
 script/generate rail_stat
 
-2. Notice that your app has now been populated with the generated rail_stat code, such as views/rail_stat, model/rail_stat.rb etc...
+Your app has now been populated with the generated db code and your public directory contains images for use with rail_stat code.
+
+2. Set up Rails engines using this line of code in config/environment.rb, just below the rails boot call.
+
+#this line exists
+#require File.join(File.dirname(__FILE__), 'boot')
+#Add right below the above line
+require File.join(File.dirname(__FILE__), '../vendor/plugins/engines/boot')
 
 Step Three: Database Migration
 ------------------------------
@@ -48,7 +56,7 @@ For MAC OS/X Users: instead of getting wget onto your system, just download the 
 
    mysql -u _user_ _dbname_ < ip-to-country.mysql.sql
 
-5. Add your web site name to the end of config/environment.rb (assign it to a constant SITE_NAME)
+5. Add your web site name to the very bottom of config/environment.rb (assign it to a constant SITE_NAME)
    
    Example:
    SITE_NAME = 'www.mydomain.com'
@@ -56,6 +64,18 @@ For MAC OS/X Users: instead of getting wget onto your system, just download the 
 Notes: Steps 2 - 4 are optional. If you don't want to download ip-to-country database 
        the system will work but the visitor country will not be tracked.
 
-== Upcoming Features ==
-Access control to secure rail_stat for admin only viewing.
+
+== Changes ==
+v 0.1 - now rails engines is required and removed much of the generator code to function as follows:
+vendor/plugins/rail_stat/
+|-- app
+|   |-- controllers
+|   |-- helpers
+|   |-- models
+|   |-- views
+|-- lib
+    |-- path_tracker.rb
+* 	Access control to secure rail_stat for admin only viewing (uncomment in rail_stat_controller.rb).
+
+
 
